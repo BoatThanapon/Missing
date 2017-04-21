@@ -46,11 +46,10 @@ public class Inventory {
 
 
 	public void removeFruit(Fruit fruit) {
-
 	}
 
 	public void removeMoney(double money) {
-		this.money = money;
+		this.money -= money;
 	}
 
 	public void viewPlant() {
