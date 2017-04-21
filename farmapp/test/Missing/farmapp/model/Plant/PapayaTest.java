@@ -32,6 +32,18 @@ public class PapayaTest {
 	}
 
 	@Test
+	public void TestgetHealthContainer() throws Exception{
+		Papaya p = new Papaya();
+		assertEquals(p.getHealthContainer(),5);
+	}
+	@Test
+	public void TestsetHealthContainer() throws Exception{
+		Papaya p = new Papaya();
+		p.setHealthContainer(7);
+		assertEquals(p.getHealthContainer(),7);
+	}
+	
+	@Test
 	public void TestgetWaterContainer() throws Exception{
 		Papaya p = new Papaya();
 		assertEquals(p.getWaterContainer(),2);
@@ -43,6 +55,18 @@ public class PapayaTest {
 		assertEquals(p.getWaterContainer(),7);
 	}
 
+	@Test
+	public void TestgetCurrentWater() throws Exception{
+		Papaya p = new Papaya();
+		assertEquals(p.getCurrentWater(),2);
+	}
+	@Test
+	public void TestsetCurrentWater() throws Exception{
+		Papaya p = new Papaya();
+		p.setCurrentWater(3);
+		assertEquals(p.getCurrentWater(),3);
+	}
+	
 	@Test
 	public void TestgetAge() throws Exception{
 		Papaya p = new Papaya();

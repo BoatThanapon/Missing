@@ -16,6 +16,19 @@ public class Papaya implements Plant {
 		return name;
 	}
 
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getHealth() {
+		return currentHealth;
+	}
+
+	public void setHealth(int currentHealth) {
+		this.currentHealth = currentHealth;
+	}
+
 	public int getHealthContainer() {
 		return healthContainer;
 	}
@@ -31,19 +44,6 @@ public class Papaya implements Plant {
 	public void setCurrentWater(int currentWater) {
 		this.currentWater = currentWater;
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getHealth() {
-		return currentHealth;
-	}
-
-	public void setHealth(int currentHealth) {
-		this.currentHealth = currentHealth;
-	}
-
 	public int getWaterContainer() {
 		return waterContainer;
 	}
