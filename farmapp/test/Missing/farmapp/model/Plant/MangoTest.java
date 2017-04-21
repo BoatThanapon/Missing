@@ -79,5 +79,5 @@ public class MangoTest {
 		m.settype(null);
 		assertEquals(m.gettype(),null);
 	}	
-		
+	
 }
