@@ -33,6 +33,30 @@ public class StrawberryTest {
 	}
 
 	@Test
+	public void TestgetHealthContainer() throws Exception{
+		Strawberry s = new Strawberry();
+		assertEquals(s.getHealthContainer(),5);
+	}
+	@Test
+	public void TestsetHealthContainer() throws Exception{
+		Strawberry s = new Strawberry();
+		s.setHealthContainer(7);
+		assertEquals(s.getHealthContainer(),7);
+	}
+	
+	@Test
+	public void TestgetCurrentWater() throws Exception{
+		Strawberry s = new Strawberry();
+		assertEquals(s.getCurrentWater(),2);
+	}
+	@Test
+	public void TestsetCurrentWater() throws Exception{
+		Strawberry s = new Strawberry();
+		s.setCurrentWater(3);
+		assertEquals(s.getCurrentWater(),3);
+	}
+	
+	@Test
 	public void TestgetWaterContainer() throws Exception{
 		Strawberry s = new Strawberry();
 		assertEquals(s.getWaterContainer(),2);
