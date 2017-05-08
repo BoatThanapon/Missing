@@ -1,4 +1,4 @@
-package Missing.farmapp.model;
+package Missing.farmapp.gardenbed;
 
 import java.util.ArrayList;
 import java.util.List;
