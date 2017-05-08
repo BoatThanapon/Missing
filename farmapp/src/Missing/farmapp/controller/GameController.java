@@ -3,48 +3,68 @@ package Missing.farmapp.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import Missing.farmapp.controller.TimeController;
-import Missing.farmapp.gardenbed.GardenBed;
+import Missing.farmapp.model.Fruit.Fruit;
 import Missing.farmapp.model.Plant.Plant;
+import Missing.farmapp.model.Seed.Seed;
+
 
 public class GameController {
-	static GardenBed gardenBed = new GardenBed();
-	static TimeController timeController = new TimeController();
+	private static List<Seed> seeds = new ArrayList<Seed>();
+	private static List<Plant> plants = new ArrayList<Plant>();
+	private static List<Fruit> fruits = new ArrayList<Fruit>();
 	
-
-	public void NextDay() {
-		timeController.setDay(timeController.getDay() + 1);
-		for (int i = 0; i < gardenBed.getPlantList().size(); i++) {
-			gardenBed.getPlantList().get(i).setAge(gardenBed.getPlantList().get(i).getAge() + 1);
-			RemovePlant(gardenBed.getPlantList());
-		}
-
+	public GameController(){
+		//Add data
+		
+		//Seed(name,price)
+		seeds.add(new Seed("Papaya",50));
+		seeds.add(new Seed("Mango",75));
+		seeds.add(new Seed("Strawberry",100));
+		
+		//Plant(name,health,water,seedling,mature,dead)
+		plants.add(new Plant("Papaya",6,2,1,3,7));
+		plants.add(new Plant("Mango",4,3,1,3,7));
+		plants.add(new Plant("Strawberry",2,2,1,3,10));
+		
+		//Fruit(name,price)
+		fruits.add(new Fruit("Papaya",100));
+		fruits.add(new Fruit("Mango",150));
+		fruits.add(new Fruit("Mango",200));
+		
+		
 	}
-
-	public void AddPlant(Plant plant) { 
-		gardenBed.setPlantList(plant);
-	}
-
 	
-
-	public List<Plant> GetPlantList() {
-		List<Plant> plantList = new ArrayList<Plant>();
-		plantList = gardenBed.getPlantList();
-		return plantList;
-	}
-
-	public boolean RemovePlant(List<Plant> plantList) {
-		for (int i = 0; i < plantList.size(); i++) {
-			if (plantList.get(i).getAge() > plantList.get(i).getLifeCycle()) {
-				plantList.remove(i);
-				return true;
+	public static Seed getSeed(String name){
+		for(int i=0; i<seeds.size(); i++){
+			Seed seed = seeds.get(i);
+			if(seed.getName().equals(name)){
+				return new Seed(seed.getName(),seed.getPrice());
 			}
-			
 		}
-		return false;
+		return null;
 	}
-
-	public int GetDay() {
-		return timeController.getDay();
+	
+	
+	public static Plant getPlant(String name){
+		for(int i=0; i<plants.size(); i++){
+			Plant plant = plants.get(i);
+			if(plant.getName()== name){
+				return new Plant(plant.getName(),plant.getHealth(),
+						plant.getWater(),plant.getSeedling(),
+						plant.getMature(),plant.getDead());
+			}
+		}
+		return null;
 	}
+	
+	public static Fruit getFruit(String name){
+		for(int i=0; i<fruits.size(); i++){
+			Fruit fruit = fruits.get(i);
+			if(fruit.getName()== name){
+				return new Fruit(fruit.getName(),fruit.getPrice());
+			}
+		}
+		return null;
+	}
+	
 }
