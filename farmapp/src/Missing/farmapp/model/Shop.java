@@ -16,20 +16,18 @@ public class Shop {
 	public Shop(){
 		itemList.add(GameController.getSeed("Apple"));
 		itemList.add(GameController.getSeed("Mango"));
+		itemList.add(GameController.getSeed("Strawberry"));
 	}
 	
 	public void visitShop(PlayerController player){
 		int input = 0;
 		System.out.println("1> Buy Item");
-		System.out.println("2> Sell Item");
-		System.out.println("3> Leave Shop");
+		System.out.println("2> Leave Shop");
 		System.out.print("Input number>>");
 		int shop = reader.nextInt();
 		if(shop==1){
 			buyItem(player);
 		}else if(shop==2){
-			player.sellItem();
-		}else if(shop==3){
 			System.out.println("We hope meet you again!");
 			promt.showMenu();
 		}
@@ -50,10 +48,16 @@ public class Shop {
 		Item item = itemList.get(buy-1);
 		System.out.println("How many items do you want?");
 		int amount = reader.nextInt();
-		player.buyItem(item, amount);
-		System.out.println("Buying Success");
-		System.out.println(player.getName()+", you have "+player.getMoney()+"bath left.");
-		return true;
+		int price = item.getPrice()*amount;
+		if(player.getMoney()>=price){
+			player.buyItem(item, amount, price);
+			System.out.println("Buying Success");
+			System.out.println(player.getName()+", you have "+player.getMoney()+"bath left.");
+			return true;
+		}else{
+			System.out.println("Not enough money");
+			return false;
+		}
 	}
 	
 	public void reStock(){

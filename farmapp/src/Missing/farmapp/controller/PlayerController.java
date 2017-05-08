@@ -10,7 +10,6 @@ import Missing.farmapp.model.Fruit.Fruit;
 public class PlayerController {
 
 	private String name;
-	private double power;
 	private int money;
 	private List<Item> inventory = new ArrayList<Item>();
 	
@@ -23,17 +22,8 @@ public class PlayerController {
 		return name;
 	}
 	
-	public double getMoney(){
+	public int getMoney() {
 		return money;
-	}	
-
-	public boolean sellItem(){
-		if(inventory.size()==0){
-			System.out.println("Empty Item");
-		}else{
-			showInventory();
-		}
-		return true;
 	}
 	
 	public List<Item> getSeeds(){
@@ -56,8 +46,9 @@ public class PlayerController {
 		}
 	}
 	
-	public boolean buyItem(Item item, int amount){
+	public boolean buyItem(Item item, int amount,int price){
 		addItemToInventory(item,amount);
+		money-=price;
 		return true;
 	}
 	
@@ -93,18 +84,18 @@ public class PlayerController {
 	}
 	
 	public boolean harvestPlant(GardenBed gardenbed){
-		boolean harvestSomething = false;
+		boolean harvest = false;
 		for(int i=0; i<gardenbed.size(); i++){
 			if(gardenbed.getPlant(i)!=null){
 				Fruit fruit = gardenbed.getPlant(i).isHarvested();
 				if(fruit!=null){
 					addItemToInventory(fruit,fruit.getAmount());
 					System.out.println("You got "+fruit.getAmount()+" of "+fruit.getName());
-					harvestSomething = true;
+					harvest = true;
 				}
 			}
 		}
-		if(!harvestSomething){
+		if(!harvest){
 			System.out.println("Empty to harvest.");
 		}
 		return true;
