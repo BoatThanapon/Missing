@@ -33,4 +33,11 @@ public class SeedTest {
 	public void useTest(){
 		assertEquals(seed.use(),false);
 	}
+	
+	@Test
+	public void deductAmountTest(){
+		assertEquals(seed.deductAmount(3),true);
+	}
+	
+	
 }

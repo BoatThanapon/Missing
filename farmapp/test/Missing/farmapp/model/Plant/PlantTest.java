@@ -16,6 +16,11 @@ public class PlantTest {
 	@Test
 	public void getAgeTest(){
 		assertEquals(plant.getAge(), 0);
+		plant.increaseAge();
+		plant.increaseAge();
+		plant.increaseAge();
+		plant.increaseAge();
+		assertEquals(plant.getAge(), 4);
 	}
 	
 	@Test
@@ -57,20 +62,19 @@ public class PlantTest {
 		plant.increaseAge();
 		assertEquals(plant.getCurrentWater(),4);		
 	}
-	
 		
-	@Test
-	public void increaseAge(){
-		assertEquals(1,plant.getAge());
-		assertEquals(plant.getState(),"Seedling");
-		plant.increaseAge();
-		plant.increaseAge();
-		plant.increaseAge();
-		assertEquals(3,plant.getAge());
-		assertEquals(plant.getState(),"Mature");
-		plant.increaseAge();
-		plant.increaseAge();
-		
-
-	}
+//	@Test
+//	public void increaseAge(){
+//		assertEquals(1,plant.getAge());
+//		assertEquals(plant.getState(),"Seedling");
+//		plant.increaseAge();
+//		plant.increaseAge();
+//		plant.increaseAge();
+//		assertEquals(3,plant.getAge());
+//		assertEquals(plant.getState(),"Mature");
+//		plant.increaseAge();
+//		plant.increaseAge();
+//		
+//
+//	}
 }
