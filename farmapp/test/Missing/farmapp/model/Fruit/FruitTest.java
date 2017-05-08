@@ -6,16 +6,11 @@ import org.junit.Test;
 
 public class FruitTest {
 
-	Fruit fruit = new Fruit("Apple", 500);
+	Fruit fruit = new Fruit("Apple");
 	
 	@Test
 	public void getNameTest(){
 		assertEquals(fruit.getName(),"Apple");
-	}
-	
-	@Test
-	public void getPriceTest(){
-		assertEquals(fruit.getPrice(),500);
 	}
 	
 	@Test

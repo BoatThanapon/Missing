@@ -50,17 +50,10 @@ public class Shop {
 		Item item = itemList.get(buy-1);
 		System.out.println("How many items do you want?");
 		int amount = reader.nextInt();
-		int price = item.getPrice()*amount;
-		if(player.getMoney()>=price){
-			player.buyItem(item, amount, price);
-			System.out.println("Buying Success");
-			System.out.println(player.getName()+", you have "+player.getMoney()+"bath left.");
-			return true;
-		}else{
-			System.out.println("Not enough money");
-			return false;
-		}
-
+		player.buyItem(item, amount);
+		System.out.println("Buying Success");
+		System.out.println(player.getName()+", you have "+player.getMoney()+"bath left.");
+		return true;
 	}
 	
 	public void reStock(){

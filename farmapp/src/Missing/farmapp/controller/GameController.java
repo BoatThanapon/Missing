@@ -16,9 +16,9 @@ public class GameController {
 		//Add data
 		
 		//Seed(name,price)
-		seeds.add(new Seed("Papaya",50));
-		seeds.add(new Seed("Mango",75));
-		seeds.add(new Seed("Strawberry",100));
+		seeds.add(new Seed("Papaya"));
+		seeds.add(new Seed("Mango"));
+		seeds.add(new Seed("Strawberry"));
 		
 		//Plant(name,health,water,seedling,mature,dead)
 		plants.add(new Plant("Papaya",6,2,1,3,7));
@@ -26,11 +26,10 @@ public class GameController {
 		plants.add(new Plant("Strawberry",2,2,1,3,10));
 		
 		//Fruit(name,price)
-		fruits.add(new Fruit("Papaya",100));
-		fruits.add(new Fruit("Mango",150));
-		fruits.add(new Fruit("Mango",200));
-		
-		
+		fruits.add(new Fruit("Papaya"));
+		fruits.add(new Fruit("Mango"));
+		fruits.add(new Fruit("Strawberry"));
+			
 	}
 	
 	public static Seed getSeed(String name){
@@ -60,7 +59,7 @@ public class GameController {
 		for(int i=0; i<fruits.size(); i++){
 			Fruit fruit = fruits.get(i);
 			if(fruit.getName()== name){
-				return new Fruit(fruit.getName(),fruit.getPrice());
+				return new Fruit(fruit.getName());
 			}
 		}
 		return null;

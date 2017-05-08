@@ -56,7 +56,7 @@ public class PlayerController {
 		}
 	}
 	
-	public boolean buyItem(Item item, int amount,int price){
+	public boolean buyItem(Item item, int amount){
 		addItemToInventory(item,amount);
 		return true;
 	}
