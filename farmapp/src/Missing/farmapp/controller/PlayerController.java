@@ -17,16 +17,15 @@ public class PlayerController {
 	
 	public PlayerController(){
 		name = "Doraemon";
-		energy = 30;
-		power = 0;
+		money = 6000;
 	}
 
 	public String getName(){
 		return name;
 	}
 	
-	public double getEnergy(){
-		return energy;
+	public double getMoney(){
+		return money;
 	}	
 
 	public boolean sellItem(){
@@ -113,8 +112,4 @@ public class PlayerController {
 		return true;
 	}
 
-	public int getMoney() {
-		// TODO Auto-generated method stub
-		return money;
-	}
 }
