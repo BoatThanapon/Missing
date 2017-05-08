@@ -20,7 +20,6 @@ public class Shop {
 	}
 	
 	public void visitShop(PlayerController player){
-		int input = 0;
 		System.out.println("1> Buy Item");
 		System.out.println("2> Leave Shop");
 		System.out.print("Input number>>");

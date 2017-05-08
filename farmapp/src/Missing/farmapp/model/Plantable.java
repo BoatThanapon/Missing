@@ -20,7 +20,6 @@ public interface Plantable {
 	int currentWater = 5;
 	
 	List<Fruit> product = new ArrayList<Fruit>();
-	boolean isFertilized = false;
 	
 	String getState();
 	void increaseAge();
