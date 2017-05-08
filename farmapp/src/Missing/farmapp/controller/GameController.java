@@ -11,12 +11,21 @@ public class GameController {
 	static GardenBed gardenBed = new GardenBed();
 	static TimeController timeController = new TimeController();
 	
+<<<<<<< HEAD
 
 	public void NextDay() {
 		timeController.setDay(timeController.getDay() + 1);
 		for (int i = 0; i < gardenBed.getPlantList().size(); i++) {
 			gardenBed.getPlantList().get(i).setAge(gardenBed.getPlantList().get(i).getAge() + 1);
 			RemovePlant(gardenBed.getPlantList());
+=======
+	public static Seed getSeed(String name){
+		for(int i=0; i<seeds.size(); i++){
+			Seed seed = seeds.get(i);
+			if(seed.getName().equals(name)){
+				return new Seed(seed.getName(),seed.getPrice());
+			}
+>>>>>>> parent of fc29180... Fixed model and controller class
 		}
 
 	}

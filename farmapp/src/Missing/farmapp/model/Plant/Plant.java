@@ -20,6 +20,7 @@ public interface Plant {
 
 	public void setWaterContainer(int waterContainer);
 
+<<<<<<< HEAD
 	public int getAge();
 
 	public void setAge(int age);
@@ -27,6 +28,53 @@ public interface Plant {
 	public int getLifeCycle();
 
 	public void setLifeCycle(int lifeCycle);
+=======
+		if (age > seedling) {
+			state = "seedling";
+		}
+		if (age > mature) {
+			state = "mature";
+		}
+		if (age > dead) {
+			state = "dead";
+		}
+		
+		if (state.equals("mature")){ 
+			int numberOfFruit=0;
+			if(fruit==null){
+				fruit = GameController.getFruit(name);
+				numberOfFruit++;
+			}else{
+				if(currentHealth == maxHealth){
+					numberOfFruit++;
+				}
+				if(currentWater == maxWater){
+					numberOfFruit++;
+				}
+			}
+			fruit.addAmount(numberOfFruit);
+			System.out.println("Your " + name + " has produced " + numberOfFruit);
+			
+		}
+		
+		if(currentWater == maxWater){
+			increaseCurrentHealth();
+		}
+		decreaseCurrentWater();
+		if (currentWater == 0) {
+			decreaseCurrentHealth();
+		}
+		
+		if (currentHealth == 0) {
+			state = "dead";
+			System.out.println("Your " + name + " has dead.");
+			if(fruit!=null){
+				fruit=null;
+				System.out.println("Your " + name + "'s fruit has dead");
+			}
+		}
+	}
+>>>>>>> parent of fc29180... Fixed model and controller class
 	
 	public void settype(String type);
 
