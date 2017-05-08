@@ -10,7 +10,6 @@ import Missing.farmapp.model.Fruit.Fruit;
 public class PlayerController {
 
 	private String name;
-	private int energy;
 	private double power;
 	private int money;
 	private List<Item> inventory = new ArrayList<Item>();
